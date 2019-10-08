@@ -78,8 +78,12 @@ public class StepDefinition {
 	    	if(linktext.contains(webPageurl)) {
 	    		continue;
 	    	}else {
+	    		String s1 =webElement.getText();
+	    		String[] sNews=s1.split(" ");
+	    		if(sArticleName.contains(sNews[0])) {
 	    		status =true;
 	    		break;
+	    		}
 	    	}
 		}
 	    Assert.assertEquals("Verify Article", true, status);

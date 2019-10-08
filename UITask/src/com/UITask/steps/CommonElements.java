@@ -22,7 +22,7 @@ public class CommonElements {
 	
 	public static By okPopup = By.xpath("//div[text()='Your privacy']/following-sibling::div//span[contains(text(),'OK with that')]");
 	
-	public static By firstArticle = By.xpath("(//div[@data-title='"+getDate()+"']//div//a[@data-link-name='article' and @aria-hidden='true'])[1]");
+	public static By firstArticle = By.xpath("(//div//a[@data-link-name='article' and @aria-hidden='true'])[1]");
 	
 	public static By articleHeader = By.xpath("//h1[@itemprop = 'headline']");
 	
