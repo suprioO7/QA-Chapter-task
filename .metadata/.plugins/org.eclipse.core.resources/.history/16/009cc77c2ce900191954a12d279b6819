@@ -1,0 +1,29 @@
+package com.apitasks.commonMethods;
+
+import java.util.HashMap;
+
+import org.hamcrest.core.Is;
+
+import cucumber.api.java.en.Then;
+import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+public class CommonMethods {
+	
+	public static void postOperation(HashMap<String, String> data) {
+		given().contentType(ContentType.JSON).
+		with().body(data).
+		when().post("https://jsonplaceholder.typicode.com/posts").
+		then().body("title", Is.is("Api post demo")).statusCode(201);
+		
+	}
+	
+public static void verifyStatusCodeForGivenUser(String user) {
+	given().contentType(ContentType.JSON).
+	with().queryParam("id", "Bret").
+	when().get("https://jsonplaceholder.typicode.com/users/{1}").
+	getStatusCode();
+}
+}

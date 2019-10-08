@@ -1,0 +1,9 @@
+package com.apitasks.commonMethods;
+
+public class CommonMethods {
+	
+	public static void postOperation() {
+		
+	}
+
+}

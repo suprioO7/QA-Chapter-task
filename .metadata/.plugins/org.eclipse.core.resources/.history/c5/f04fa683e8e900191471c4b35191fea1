@@ -1,0 +1,49 @@
+package com.UITask.steps;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.SystemClock;
+
+public class CommonElements {
+	
+	public WebDriver driver;
+		
+	
+	public static By okPopup = By.xpath("//div[text()='Your privacy']/following-sibling::div//span[contains(text(),'OK with that')]");
+	
+	public static By firstArticle = By.xpath("(//div[@data-title='"+getDate()+"']//div//a[@data-link-name='article' and @aria-hidden='true'])[1]");
+	
+	public static By articleHeader = By.xpath("//h1[@itemprop = 'headline']");
+	
+	public static By txtGoogleSearch = By.xpath("//div[@id='searchform']//input[@title='Search']");
+	
+	public static By searchresults = By.xpath("//div[@class='srg']/div//div[@class='r']/a");
+	
+	public static WebDriver launchBrowser(String url) {
+		
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/server/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--start-maximized");
+		options.addArguments("--disable-infobars");
+		WebDriver driver = new ChromeDriver(options);
+		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		return driver;
+		
+	}
+	
+	public static String getDate() {
+		 long timestamp = System.currentTimeMillis();
+		 SimpleDateFormat dateFormat = new SimpleDateFormat("d MMMM yyyy");    
+		 String date = dateFormat.format(new Date(timestamp));
+		 return date;
+	}
+
+}

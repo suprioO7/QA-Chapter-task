@@ -1,0 +1,22 @@
+package com.UITask.steps;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class StepDefinition {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = CommonElements.launchBrowser();
+		
+		driver.findElement(By.xpath("//div[text()='Your privacy']/following-sibling::div//span[contains(text(),'OK with that')]")).click();
+		
+		driver.findElement(By.xpath("(//div[@data-title='8 October 2019']//div//a[@data-link-name='article' and @aria-hidden='true'])[1]")).click();
+		
+		
+		}
+	
+}

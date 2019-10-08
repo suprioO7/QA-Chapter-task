@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RunnerClass" project="UITask" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.UITask.steps.RunnerClass" time="37.838">
+    <testsuite name="Feature: New Article website" time="37.838">
+      <testcase name="Navigate to News Article link and get the article title" classname="New Article website" time="23.727"/>
+      <testcase name="Search news article in google and identify article is fake or not" classname="New Article website" time="14.111"/>
+    </testsuite>
+  </testsuite>
+</testrun>

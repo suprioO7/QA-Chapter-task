@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RunnerClass" project="UITask" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.UITask.steps.RunnerClass" time="0.001">
+    <testsuite name="Feature: New Article website" time="0.001">
+      <testcase name="Navigate to News Article link and get the article title" classname="New Article website" time="0.0">
+        <skipped>cucumber.runtime.junit.UndefinedThrowable: The step "user is on News Article webpage" is undefined&#13;
+&#13;
+cucumber.runtime.junit.UndefinedThrowable: The step "user click on News Article" is undefined&#13;
+&#13;
+cucumber.runtime.junit.UndefinedThrowable: The step "Navigate to Article page and store the Article title" is undefined&#13;
+&#13;
+</skipped>
+      </testcase>
+      <testcase name="Search news article in google and identify article is fake or not" classname="New Article website" time="0.0">
+        <skipped>cucumber.runtime.junit.UndefinedThrowable: The step "user is on google page" is undefined&#13;
+&#13;
+cucumber.runtime.junit.UndefinedThrowable: The step "user search with Article name" is undefined&#13;
+&#13;
+cucumber.runtime.junit.UndefinedThrowable: The step "verify article is present in different source" is undefined&#13;
+&#13;
+</skipped>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

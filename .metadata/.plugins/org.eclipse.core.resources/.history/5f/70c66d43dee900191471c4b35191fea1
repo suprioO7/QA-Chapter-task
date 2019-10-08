@@ -1,0 +1,16 @@
+package com.apitasks.steps;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		long timestamp = System.currentTimeMillis();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM");    
+		Date date = new Date(timestamp);
+		System.out.println(date);
+	}
+
+}

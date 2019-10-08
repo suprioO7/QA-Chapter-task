@@ -1,0 +1,5 @@
+1570461336962	Rename resource 'TestAPI'
+1570462146172	Delete resource 'Backend_Service_Task/APITests'
+1570463322801	Delete resource 'Backend_Service_Task'
+1570544975486	Delete resource 'UITask/target/chromedriver.exe'
+1570544986273	Delete resource 'UITask/bin/chromedriver.exe'

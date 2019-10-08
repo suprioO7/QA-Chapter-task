@@ -1,0 +1,67 @@
+package com.UITask.steps;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.omg.CORBA.COMM_FAILURE;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class StepDefinition {
+
+	 WebDriver driver;
+	static String sArticleName	= null;	
+	String articleUrl = "https://www.theguardian.com/tone/news";
+		
+		
+	
+	
+	@Given(": user is on News Article webpage")
+	public void user_is_on_News_Article_webpage() {
+	   driver = CommonElements.launchBrowser(articleUrl);
+	}
+
+	@When(": user click on News Article")
+	public void user_click_on_News_Article() {
+		driver.findElement(CommonElements.okPopup).click();
+		driver.findElement(CommonElements.firstArticle).click();
+	}
+
+	@When(": Navigate to Article page and store the Article title")
+	public void navigate_to_Article_page_and_store_the_Article_title() {
+	    sArticleName = driver.findElement(CommonElements.articleHeader).getText();
+	    System.out.println(sArticleName);
+	    driver.close();
+	}
+
+	@Given(": user is on google page")
+	public void user_is_on_google_page() {
+	   driver=CommonElements.launchBrowser("https://www.google.com");
+	}
+
+	@When(": user search with Article name")
+	public void user_search_with_Article_name() throws InterruptedException {
+	   driver.findElement(CommonElements.txtGoogleSearch).sendKeys(sArticleName);
+	   Thread.sleep(5000);
+	   driver.findElement(CommonElements.txtGoogleSearch).sendKeys(Keys.ENTER);
+	   
+	}
+
+	@Then(": verify article is present in different source")
+	public void verify_article_is_present_in_different_source() {
+	    List<WebElement> results = driver.findElements(CommonElements.searchresults);
+	    
+	    
+	}
+
+
+	
+}

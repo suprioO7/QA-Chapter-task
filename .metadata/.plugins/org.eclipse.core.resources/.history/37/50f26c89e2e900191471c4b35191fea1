@@ -1,0 +1,57 @@
+package com.UITask.steps;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class StepDefinition {
+
+	 WebDriver driver;
+	String sArticleName	= null;		
+		
+		
+	
+	
+	@Given(": user is on News Article webpage")
+	public void user_is_on_News_Article_webpage() {
+	   driver = CommonElements.launchBrowser();
+	}
+
+	@When(": user click on News Article")
+	public void user_click_on_News_Article() {
+		driver.findElement(CommonElements.okPopup).click();
+		driver.findElement(CommonElements.firstArticle).click();
+	}
+
+	@When(": Navigate to Article page and store the Article title")
+	public void navigate_to_Article_page_and_store_the_Article_title() {
+	    sArticleName = driver.findElement(CommonElements.articleHeader).getText();
+	    System.out.println(sArticleName);
+	}
+
+	@Given(": user is on google page")
+	public void user_is_on_google_page() {
+	   driver.get("https://www.google.com");
+	}
+
+	@When(": user search with Article name")
+	public void user_search_with_Article_name() {
+	   driver.findElement(CommonElements.txtGoogleSearch).sendKeys(sArticleName);
+	   
+	}
+
+	@Then(": verify article is present in different source")
+	public void verify_article_is_present_in_different_source() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new cucumber.api.PendingException();
+	}
+
+
+	
+}

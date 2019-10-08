@@ -1,0 +1,4 @@
+Feature: post API
+Scenario: Verify post operation
+Given  : I perform post operation for "/posts"
+Then : verify post title

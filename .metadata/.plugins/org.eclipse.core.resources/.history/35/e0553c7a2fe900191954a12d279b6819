@@ -1,0 +1,8 @@
+Feature: post API
+#Scenario: Verify post operation
+#Given  : I perform post operation for "/posts"
+#Then : verify post title
+
+Scenario: Verify get users
+Given : i perform get operation for "/users"
+Then : verify status code

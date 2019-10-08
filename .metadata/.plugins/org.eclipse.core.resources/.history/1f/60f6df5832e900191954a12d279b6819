@@ -1,0 +1,10 @@
+package com.UITask.steps;
+
+public class StepDefinition {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/server/chromedriver,exe");
+		
+	}
+	
+}

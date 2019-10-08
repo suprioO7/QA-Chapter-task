@@ -1,0 +1,39 @@
+package com.UITask.steps;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.SystemClock;
+
+public class CommonElements {
+	
+	public WebDriver driver;
+	
+	long timestamp = System.currentTimeMillis();
+	SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");    
+	Date date = new Date(timestamp);
+	
+	public static By okPopup = By.xpath("//div[text()='Your privacy']/following-sibling::div//span[contains(text(),'OK with that')]");
+	
+	public static By firstArticle = By.xpath("(//div[@data-title='8 October 2019']//div//a[@data-link-name='article' and @aria-hidden='true'])[1]");
+	
+	public static WebDriver launchBrowser() {
+		
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/server/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--start-maximized");
+		options.addArguments("--disable-infobars");
+		WebDriver driver = new ChromeDriver(options);
+		driver.get("https://www.theguardian.com/tone/news");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		return driver;
+		
+	}
+
+}

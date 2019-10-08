@@ -1,0 +1,49 @@
+package com.apitasks.steps;
+
+import java.util.HashMap;
+
+import com.apitasks.commonMethods.CommonMethods;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.RequestSpecification;
+
+public class StepDefinition {
+	Response response=null;
+
+    ValidatableResponse json;
+
+    RequestSpecification request; 
+	
+	@Given(": I perform post operation for {string}")
+	public void i_perform_post_operation_for(String string) {
+		HashMap<String,String> postData = new HashMap<>();
+		postData.put("userId", "2");
+		postData.put("id", "101");
+		postData.put("title", "Api post demo");
+		postData.put("body", "api demo test verification");
+		
+	   CommonMethods.postOperation(postData);
+		
+	}
+
+	@Then(": verify post title")
+	public void verify_post_title() {
+	  
+	}
+	
+	@Given(": i perform get operation for {string}")
+	public void i_perform_get_operation_for(String string) {
+		System.out.println("Get operation");
+	}
+
+	@Then(": verify status code")
+	public void verify_status_code() {
+	    request = given();
+	}
+
+}

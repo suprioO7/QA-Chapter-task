@@ -1,0 +1,10 @@
+Feature: New Article website
+Scenario: Navigate to News Article link and get the article title
+Given : user is on News Article webpage
+When : user click on News Article
+And : Navigate to Article page and store the Article title
+
+Scenario: Search news article in google and identify article is fake or not
+Given : user is on google page
+When : user search with Article name
+Then : verify article is present in different source
