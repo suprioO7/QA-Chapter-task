@@ -1,5 +1,7 @@
 package com.UITask.steps;
 
-public class newTest {
+import org.openqa.selenium.WebDriver;
 
+public class newTest {
+WebDriver driver;
 }
