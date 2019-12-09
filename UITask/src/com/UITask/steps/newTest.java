@@ -4,4 +4,5 @@ import org.openqa.selenium.WebDriver;
 
 public class newTest {
 WebDriver driver;
+String a;
 }
